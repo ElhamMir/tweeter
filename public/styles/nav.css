@@ -6,4 +6,5 @@ nav {
    padding-right:1.5em; 
    padding-top:1.5em;
    align-items:center;
+   position: relative;
 }
