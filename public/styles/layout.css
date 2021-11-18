@@ -28,7 +28,10 @@ main {
   margin: 0 auto;
 }
 
-
+section:hover {
+ 
+  box-shadow: 10px 5px 5px lightsteelblue;
+}
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  vertical-align: middle;
