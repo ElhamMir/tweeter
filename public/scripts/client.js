@@ -123,7 +123,7 @@ const renderTweets = function(tweets) {
   $("#tweets-container").empty()
     for (let tweet of tweets) {
         console.log(tweet,"here")
-        $("#tweets-container").append(createTweetElement(tweet));
+        $("#tweets-container").prepend(createTweetElement(tweet));
 
     }
    
