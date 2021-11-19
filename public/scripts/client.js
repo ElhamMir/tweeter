@@ -9,12 +9,14 @@ $(document).ready(function () {
     $('.err').text('');
 
     if(tweet1 === 0) {
-      alert("the tweet is empty")
+      alert("the tweet is empty");
+      return;
       
 
     }
     else if (tweet1 >140) {
       alert('Your tweet length is more than 140 :(');
+      return;
     }
       $.ajax({
         type: "POST",
