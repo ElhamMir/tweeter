@@ -4,7 +4,8 @@ $(document).ready(function () {
    // alert( "Handler for .submit() called." );
     event.preventDefault();
     let tweet1 = $('.tweet-text').val().length;
-    
+    //let tweet2 = $('.tweet-text').val()
+    //console.log(tweet2,"tweet2")
     $('.err').text('');
 
     if(tweet1 === 0) {
@@ -15,44 +16,41 @@ $(document).ready(function () {
     else if (tweet1 >140) {
       alert('Your tweet length is more than 140 :(');
     }
-
-    //console.log( $( this ).serialize() ,"this is the");
-    
-    //checking if data is valid
-    //console.log(event);
-    //textSaved = $('#area');
-    //if (textSaved.length === 0) {
-     // alert("You can't submit an empty tweet");
-     // return;
-     // event.preventDefault();
-   // }
-
       $.ajax({
         type: "POST",
         url: "/tweets",
         data: $(this).serialize(),
         success: function(){
           console.log(data);
+          loadTweets(tweet2)
+          $.ajax({
+            url: "http://localhost:8080/",
+            dataType: "script",
+            success: function() {
+              console.log("worked")
+            }
+          });
+    
         },
         dataType: 'json'
       });
      // $( ".result" ).html( data );
-     function loadTweets() {
+     
+   
+    });
+  
+    function loadTweets() {
       $.ajax({
         type: "GET",
         url: "/tweets",
         data: $(this).serialize(),
-        success: function(){
-          renderTweets(loadTweets)
-          console.log(data);
+        success: function(data){
+          renderTweets(data)
+          //console.log(data);
         },
         dataType: 'json'
       });
      }
-   
-    });
-  
-   
   
   
 
