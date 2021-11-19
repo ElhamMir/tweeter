@@ -3,7 +3,7 @@ $(document).ready(function() {
     console.log('testing');
     const maxlength = 140;
       
-    $("#tweet-text").on("input",function(tweet){
+    $(".tweet-text").on("input",function(tweet){
     
       const currentLength = $(this).val().length;
       const remainingChars = maxlength - currentLength;
