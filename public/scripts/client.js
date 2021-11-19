@@ -25,15 +25,31 @@ $(document).ready(function () {
       ]
 
 const createTweetElement = function(tweet) {
-    let $tweet = `
-      <article class="tweet">
-          <div>${tweet.user.avatars}</div>
-          <div>${tweet.user.name}</div>
-          <div>${tweet.user.handle}</div>
-          <div>${tweet.content.text}</div>
-          <hr>
-          <footer>${timeago.format(new Date(tweet.created_at))}</footer>
-          </article>`;
+  let name = tweet.user.name;
+  let avatar = tweet.user.avatars;
+  let username = tweet.user.handle
+  let time = timeago.format(new Date(tweet.created_at))
+  let tweetText = tweet.content.text;
+  let $tweet = $(`<article class="tweet">
+        <div id="avatar"><img src=${avatar}></div>
+  
+  
+  
+              
+  
+        
+  
+  
+      </article>`);
+    // let $tweet = `
+    //   <article class="tweet">
+    //       <div id="avatar";><img${ src="tweet.user.avatars"}></img></div>
+    //       <div>${tweet.user.name}</div>
+    //       <div>${tweet.user.handle}</div>
+    //       <div>${tweet.content.text}</div>
+    //       <hr>
+    //       <footer>${timeago.format(new Date(tweet.created_at))}</footer><hr>   
+    //       </article>`;
   
   
       console.log(tweet)
