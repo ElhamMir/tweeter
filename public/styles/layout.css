@@ -35,6 +35,7 @@ main {
   width:92%; 
   display:flex;
   flex-direction: column;
+  margin-left:15px
 }
 
 #avatar {
@@ -44,6 +45,44 @@ main {
   margin-left: 5px; 
   float:left;
 }
+
+#name {
+  margin-top: 15px; 
+  float:left;
+}
+
+#tweetText {
+  width:96%;
+  position:relative; 
+  padding-top: 90px; 
+  padding-left:20px;
+}
+
+#lineSpace {
+  width:97%;
+  height: 5px; 
+  background-color: black;
+}
+
+#footerStyle {
+  font-size: 17px; 
+  padding-left: 15px;
+}
+
+#icons {
+  align-items:center; 
+  justify-content:left; 
+  display:flex-end; 
+  float:right; 
+  padding-right: 15px; 
+}
+
+#lineSpace2 {
+  width:100%;
+  height: 5px; 
+  background-color: black;
+}
+
 section:hover {
  
   box-shadow: 10px 5px 5px lightsteelblue;

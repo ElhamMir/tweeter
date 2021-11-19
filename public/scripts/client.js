@@ -31,10 +31,21 @@ const createTweetElement = function(tweet) {
   let time = timeago.format(new Date(tweet.created_at))
   let tweetText = tweet.content.text;
   let $tweet = $(`<article class="tweet">
+        <div>
         <div id="avatar"><img src=${avatar}></div>
+        <div id="name">${name}</div>
+        </div>
+        <div id="tweetText">${tweetText}</div>
+        <hr id="lineSpace">
+        <footer>${time}
+        <a> 
+        <span id="icons"
+        ><i class="fas fa-flag"></i>&nbsp;&nbsp; <i class="fas fa-retweet"></i>&nbsp;&nbsp;<i class="fas fa-heart"></i></span>
+        <hr id="lineSpace2">
+        </a>&nbsp;&nbsp;</footer>
   
   
-  
+        
               
   
         
