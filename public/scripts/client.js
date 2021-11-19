@@ -1,4 +1,26 @@
 $(document).ready(function () {
+
+  $( "#target" ).submit(function( event ) {
+    alert( "Handler for .submit() called." );
+    event.preventDefault();
+    //console.log( $( this ).serialize() );
+    
+      $.ajax({
+        type: "POST",
+        url: "/tweets",
+        data: $(this).serialize(),
+        success: function(){
+          console.log(data);
+        },
+        dataType: 'json'
+      });
+     // $( ".result" ).html( data );
+    });
+  
+
+  
+  
+
     const data = [
         {
           "user": {
@@ -43,26 +65,8 @@ const createTweetElement = function(tweet) {
         ><i class="fas fa-flag"></i>&nbsp;&nbsp; <i class="fas fa-retweet"></i>&nbsp;&nbsp;<i class="fas fa-heart"></i></span>
         <hr id="lineSpace2">
         </a>&nbsp;&nbsp;</footer>
-  
-  
-        
-              
-  
-        
-  
-  
       </article>`);
-    // let $tweet = `
-    //   <article class="tweet">
-    //       <div id="avatar";><img${ src="tweet.user.avatars"}></img></div>
-    //       <div>${tweet.user.name}</div>
-    //       <div>${tweet.user.handle}</div>
-    //       <div>${tweet.content.text}</div>
-    //       <hr>
-    //       <footer>${timeago.format(new Date(tweet.created_at))}</footer><hr>   
-    //       </article>`;
-  
-  
+
       console.log(tweet)
     return $tweet;
   }
