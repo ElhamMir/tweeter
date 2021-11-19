@@ -19,6 +19,9 @@ module.exports = function(DataHelpers) {
 
   tweetsRoutes.post("/", function(req, res) {
     if (!req.body.text) {
+      if (req.body.text.length === 0) {
+        //alert("The tweet is empty! try writing a tweet first before submiting.")
+      }
       res.status(400).json({ error: 'invalid request: no data in POST body'});
       return;
     }

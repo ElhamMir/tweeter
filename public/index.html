@@ -66,13 +66,14 @@
         <form  id="target" action="/tweets/" method="post">
           
           <label for="tweet-text">What are you humming about?</label>
-          <textarea style="margin: 0px; width: 90%; height: 25px;" name="text" id="tweet-text"></textarea>
+          <textarea id="area" style="margin: 0px; width: 90%; display:flex;
+          flex-direction: column;" name="text" id="tweet-text"class="tweet-text"></textarea>
           <div>
             <button type="submit" style="font-family: 'Bungee', cursive;
             font-size: 20px;
             background-color: #4056A1; 
             color: #FFFFFF; ">Tweet</button>
-            <output style="font-family: 'Bungee', cursive; align-items:center; justify-content:left; display:flex-end; float:right;" name="counter" id="counter" class="counter" for="tweet-text" src="/scripts/composer-char-counter.js">140</output>
+            <output class="err" style="font-family: 'Bungee', cursive; align-items:center; justify-content:left; display:flex-end; float:right;" name="counter" id="counter" class="counter" for="tweet-text" src="/scripts/composer-char-counter.js">140</output>
           </div>
         </form>
 
