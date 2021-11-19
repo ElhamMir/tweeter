@@ -92,10 +92,13 @@ const createTweetElement = function(tweet) {
   let username = tweet.user.handle
   let time = timeago.format(new Date(tweet.created_at))
   let tweetText = tweet.content.text;
-  let $tweet = $(`<article class="tweet">
+  let $tweet = $(`
+  <section id = "tweets-container1">
+  <article class="tweet">
         <div>
         <div id="avatar"><img src=${avatar}></div>
         <div id="name">${name}</div>
+        <div id="username">${username}</div>
         </div>
         <div id="tweetText">${tweetText}</div>
         <hr id="lineSpace">
@@ -105,7 +108,8 @@ const createTweetElement = function(tweet) {
         ><i class="fas fa-flag"></i>&nbsp;&nbsp; <i class="fas fa-retweet"></i>&nbsp;&nbsp;<i class="fas fa-heart"></i></span>
         <hr id="lineSpace2">
         </a>&nbsp;&nbsp;</footer>
-      </article>`);
+      </article>
+      </section>`);
 
       console.log(tweet)
     return $tweet;
