@@ -28,6 +28,11 @@ $(document).ready(function () {
             dataType: "script",
             success: function() {
               console.log("worked")
+              $.ajax({
+                url: "http://localhost:8080/",
+                dataType: "script",
+                success: success
+              });
             }
           });
     
@@ -45,7 +50,9 @@ $(document).ready(function () {
         url: "/tweets",
         data: $(this).serialize(),
         success: function(data){
-          renderTweets(data)
+          renderTweets(data);
+         // window.location.reload()
+         
           //console.log(data);
         },
         dataType: 'json'
@@ -107,6 +114,7 @@ const createTweetElement = function(tweet) {
 //createTweetElement(data)
 
 const renderTweets = function(tweets) {
+  $("#tweets-container").empty()
     for (let tweet of tweets) {
         console.log(tweet,"here")
         $("#tweets-container").append(createTweetElement(tweet));
