@@ -87,7 +87,7 @@ const renderTweets = function(tweets) {
   }
 $(document).ready(function () {
   loadTweets();
-  $( "#target" ).click(function( event ) {
+  $( "#target" ).on("submit",function( event ) {
     //$( "#btn" ).click(function( event ) {
    
     event.preventDefault();
@@ -106,7 +106,7 @@ $(document).ready(function () {
     }
     else if (tweet1 >140) {
       console.log("line 10")
-      $('#long-tweet').show();
+      $('#long-tweet').show("slow");
        $("#btn").click(function(){
        $('#long-tweet').hide();});
        
