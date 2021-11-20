@@ -88,6 +88,13 @@ $(document).ready(function () {
         }
       ]
 
+      const escape = function (str) {
+        let div = document.createElement("div");
+        div.appendChild(document.createTextNode(str));
+        return div.innerHTML;
+      };
+      
+
 const createTweetElement = function(tweet) {
   let name = tweet.user.name;
   let avatar = tweet.user.avatars;
@@ -102,7 +109,7 @@ const createTweetElement = function(tweet) {
         <div id="name">${name}</div>
         <div id="username">${username}</div>
         </div>
-        <div id="tweetText">${tweetText}</div>
+        <div id="tweetText">${escape(tweetText)}</div>
         <hr id="lineSpace">
         <footer>${time}
         <a> 
