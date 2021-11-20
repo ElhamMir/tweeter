@@ -87,13 +87,14 @@ const renderTweets = function(tweets) {
   }
 $(document).ready(function () {
   loadTweets();
-  $( "#btn" ).click(function( event ) {
+  $( "#target" ).click(function( event ) {
+    //$( "#btn" ).click(function( event ) {
    
     event.preventDefault();
     let tweet1 = $('.tweet-text').val().length;
     console.log("tweet1",tweet1)
     $('.err').text('');
-
+   // if()
     if(tweet1 === 0) {
       console.log("line 10")
       $('#empty-tweet').show();
@@ -104,9 +105,13 @@ $(document).ready(function () {
        return;
     }
     else if (tweet1 >140) {
-      //$('#empty-tweet').show();
-      alert('testing again!!!');
-      return;
+      console.log("line 10")
+      $('#long-tweet').show();
+       $("#btn").click(function(){
+       $('#long-tweet').hide();});
+       
+       console.log("works")
+       return;
     }
       $.ajax({
         type: "POST",
@@ -119,6 +124,6 @@ $(document).ready(function () {
         }
       });
 
-    })
-  
+    
+})
 })
