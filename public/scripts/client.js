@@ -97,8 +97,11 @@ $(document).ready(function () {
    // if()
     if(tweet1 === 0) {
       console.log("line 10")
-      $('#empty-tweet').show();
+      //$('#empty-tweet').show();
+      $('#empty-tweet').slideDown();
+
        $("#btn").click(function(){
+        $('#empty-tweet').slideUp();
        $('#empty-tweet').hide();});
        
        console.log("works")
