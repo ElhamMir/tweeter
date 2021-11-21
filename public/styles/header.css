@@ -1,17 +1,16 @@
 header {
-    padding-top: 150px;
-    flex-direction: column;
-    height: 400px;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #007b91;
-background-image: url("https://www.transparenttextures.com/patterns/bright-squares.png");
+  padding-top: 150px;
+  flex-direction: column;
+  height: 400px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #007b91;
+  background-image: url("https://www.transparenttextures.com/patterns/bright-squares.png");
 
-/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 
 }
 
@@ -20,12 +19,11 @@ background-image: url("https://www.transparenttextures.com/patterns/bright-squar
         flex-direction: column;
         display: flex;
         justify-content: center;
-        float:left
+        float:left;
     }
 }
 
 @media only screen and (min-width:768px) {
-    
     #headers{
        width:25%;
        height:15em;
@@ -33,5 +31,5 @@ background-image: url("https://www.transparenttextures.com/patterns/bright-squar
        margin-left:10%;
        margin-top:15%;
        
-     }
-   }
+    }
+}

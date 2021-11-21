@@ -30,25 +30,19 @@ label {
   margin-left:10%;
 }
 
-
-
 main {
   width: 90%;
 }
 
 #tweets-container {
-  
-  
-  
   margin-top: 10px; 
   width:92%; 
   display:flex;
   flex-direction: column;
   margin-left:5%
 }
+
 #tweets-container1 {
-  
-  
   border: 5px solid black;
   margin-top: 10px; 
   width:92%; 
@@ -141,8 +135,6 @@ main {
 
 i:hover {
   color: goldenrod;
-  
-
 }
 
 i {

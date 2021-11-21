@@ -41,7 +41,9 @@
       <span id="navlogo"  >tweeter</span>
       <div id="navstyle" >
       <span style="align-items:center; justify-content:left; display:flex-end; float:right;"><strong>Write</strong> a new tweet</span>
+      <button  class="btn1" id="btn1"  type="submit" onclick='document.getElementById("target").style.display = "block"';>
     <span style="align-items:center; justify-content:left; display:flex-end; float:right; color:red"><i style="color:red" class="fas fa-angle-double-down"></i></span>
+  </button>
      </div>
     </nav>
 
@@ -56,7 +58,7 @@
           <h2>User</h2>
       </div>
     </div>
-  </header>
+    </header>
   
       
     <!-- Page-specific (main) content here -->
@@ -71,26 +73,24 @@
 
       <div id="error-messg" class="error"></div>
       <h2 style="margin-left:10%";">Compose Tweet</h2>
-      <form  id="target" action="/tweets/" method="post" >
+      <form  id="target" action="/tweets/" method="post" style="display: none;" >
           
-          <label  for="tweet-text"></label>
-          
-          <textarea  placeholder="What are you humming about?"name="text" id="tweet-text"class="tweet-text"></textarea>
+        <label  for="tweet-text"></label>
+        <textarea  placeholder="What are you humming about?"name="text" id="tweet-text"class="tweet-text"></textarea>
 
-          <div>
+        <div>
 
-            <button  class="btn" id="btn"  type="submit" >Tweet</button>
+          <button  class="btn" id="btn"  type="submit" >Tweet</button>
          
-            <output name="counter" id="counter" class="counter" for="tweet-text" src="/scripts/composer-char-counter.js">140</output>
-          </div>
-        </form>
+          <output name="counter" id="counter" class="counter" for="tweet-text" src="/scripts/composer-char-counter.js">140</output>
+        </div>
+      </form>
 
-      </section>
+    </section>
 
-      <section id = "tweets-container">
-        <section></section>
-        
-     </section>
+    <section id = "tweets-container">
+      <section></section>
+    </section>
       
     </main>
   </body>

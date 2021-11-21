@@ -111,6 +111,7 @@ $(document).ready(function() {
         console.log(data);
         loadTweets();
         $('#tweet-text').val('');
+        $('#counter').val(140);
       }
     });
   });
