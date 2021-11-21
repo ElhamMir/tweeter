@@ -18,3 +18,11 @@ nav {
    }
    
 }
+@media only screen and (max-width:1024px) {
+   #navbr{
+      background-color: #007b91;
+     
+   }
+ }
+ 
+ 
