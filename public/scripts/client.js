@@ -3,14 +3,14 @@ function loadTweets() {
     type: "GET",
     url: "/tweets",
     data: $(this).serialize(),
-    success: function(data){
-    renderTweets(data);
+    success: function(data) {
+      renderTweets(data);
     },
     dataType: 'json'
   });
- }
+}
 
- const data = [
+const data = [
   {
     "user": {
       "name": "Newton",
@@ -33,21 +33,21 @@ function loadTweets() {
     },
     "created_at": 1461113959088
   }
-]
+];
 
 
-const escape = function (str) {
+const escape = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
-  };
+};
       
 
 const createTweetElement = function(tweet) {
   let name = tweet.user.name;
   let avatar = tweet.user.avatars;
-  let username = tweet.user.handle
-  let time = timeago.format(new Date(tweet.created_at))
+  let username = tweet.user.handle;
+  let time = timeago.format(new Date(tweet.created_at));
   let tweetText = tweet.content.text;
   let $tweet = $(`
   <section id = "tweets-container1">
@@ -68,62 +68,50 @@ const createTweetElement = function(tweet) {
       </article>
       </section>`);
 
-      console.log(tweet)
-    return $tweet;
-  }
-
-//createTweetElement(data)
+  console.log(tweet);
+  return $tweet;
+};
 
 const renderTweets = function(tweets) {
-  $("#tweets-container").empty()
-    for (let tweet of tweets) {
-        console.log(tweet,"here")
-        $("#tweets-container").prepend(createTweetElement(tweet));
+  $("#tweets-container").empty();
+  for (let tweet of tweets) {
+    $("#tweets-container").prepend(createTweetElement(tweet));
 
-    }
   }
-$(document).ready(function () {
+};
+
+$(document).ready(function() {
   loadTweets();
-  $( "#target" ).on("submit",function( event ) {
-    //$( "#btn" ).click(function( event ) {
-   
+  $("#target").on("submit",function(event) {
     event.preventDefault();
     let tweet1 = $('.tweet-text').val().length;
-    console.log("tweet1",tweet1)
+    console.log("tweet1",tweet1);
     $('.err').text('');
-   // if()
-    if(tweet1 === 0) {
-      console.log("line 10")
-      //$('#empty-tweet').show();
+    if (tweet1 === 0) {
+      console.log("line 10");
       $('#empty-tweet').slideDown();
-
-       $("#btn").click(function(){
+      $("#btn").click(function() {
         $('#empty-tweet').slideUp();
-       $('#empty-tweet').hide();});
-       
-       console.log("works")
-       return;
-    }
-    else if (tweet1 >140) {
-      console.log("line 10")
-      $('#long-tweet').show("slow");
-       $("#btn").click(function(){
-       $('#long-tweet').hide();});
-       
-       console.log("works")
-       return;
-    }
-      $.ajax({
-        type: "POST",
-        url: "/tweets",
-        data: $(this).serialize(),
-        success: function(){
-          console.log(data);
-          loadTweets();
-          $('#tweet-text').val('');
-        }
+        $('#empty-tweet').hide();
       });
-
-    
-})
-})
+      return;
+    }
+    else if (tweet1 > 140) {
+      $('#long-tweet').show("slow");
+      $("#btn").click(function() {
+        $('#long-tweet').hide();
+      });
+      return;
+    }
+    $.ajax({
+      type: "POST",
+      url: "/tweets",
+      data: $(this).serialize(),
+      success: function() {
+        console.log(data);
+        loadTweets();
+        $('#tweet-text').val('');
+      }
+    });
+  });
+});
