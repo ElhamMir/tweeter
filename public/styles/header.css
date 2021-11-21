@@ -1,6 +1,6 @@
 header {
     padding-top: 150px;
-    
+    flex-direction: column;
     height: 400px;
     width: 100%;
     justify-content: center;
@@ -14,3 +14,24 @@ background-image: url("https://www.transparenttextures.com/patterns/bright-squar
 /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 
 }
+
+@media only screen and (max-width: 1024px) {
+    #headers {
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        float:left
+    }
+}
+
+@media only screen and (min-width:768px) {
+    
+    #headers{
+       width:25%;
+       height:15em;
+       float:left;
+       margin-left:10%;
+       margin-top:15%;
+       
+     }
+   }
