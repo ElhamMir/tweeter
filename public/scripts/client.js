@@ -60,7 +60,9 @@ const createTweetElement = function(tweet) {
         <div id="name">${name}</div>
         <div id="username">${username}</div>
         </div>
-        <div id="tweetText">${escape(tweetText)}</div>
+        <div id="tweetText" style="width=50%; overflow-wrap: break-word;
+        word-wrap: break-word;
+        flex-direction: row;">${escape(tweetText)}</div>
         <hr id="lineSpace">
         <footer>${time}
         <a> 

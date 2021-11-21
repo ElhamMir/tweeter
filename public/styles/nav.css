@@ -14,7 +14,7 @@ nav {
       transform: translateY(0%);
    }
    100% {
-      transform: translateY(-5em);
+      transform: translateY(-10%);
    }
    
 }
