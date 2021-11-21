@@ -22,6 +22,15 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+h2 {
+  margin-left:10%";
+}
+
+label {
+  margin-left:10%;
+}
+
+
 
 main {
   width: 90%;
@@ -121,6 +130,10 @@ main {
   box-shadow: 10px 5px 5px lightsteelblue;
 }
 
+#btn:hover {
+  box-shadow: 10px 5px 5px lightsteelblue;
+}
+
 #output {
   font-family: 'Bungee', cursive; align-items:center; justify-content:left; display:flex-end; 
   float:right;
@@ -131,11 +144,7 @@ i:hover {
   
 
 }
+
 i {
   color:darkslateblue
 }
-
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- vertical-align: middle;
- */

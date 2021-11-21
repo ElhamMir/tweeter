@@ -4,10 +4,7 @@ function loadTweets() {
     url: "/tweets",
     data: $(this).serialize(),
     success: function(data){
-      renderTweets(data);
-     // window.location.reload()
-     
-      //console.log(data);
+    renderTweets(data);
     },
     dataType: 'json'
   });
@@ -39,11 +36,11 @@ function loadTweets() {
 ]
 
 
-      const escape = function (str) {
-        let div = document.createElement("div");
-        div.appendChild(document.createTextNode(str));
-        return div.innerHTML;
-      };
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+  };
       
 
 const createTweetElement = function(tweet) {
@@ -68,8 +65,6 @@ const createTweetElement = function(tweet) {
         <a> 
         <span id="icons"
         ><i class="fas fa-flag"></i>&nbsp;&nbsp; <i class="fas fa-retweet"></i>&nbsp;&nbsp;<i class="fas fa-heart"></i></span>
-        <hr id="lineSpace2">
-        </a>&nbsp;&nbsp;</footer>
       </article>
       </section>`);
 
@@ -125,7 +120,7 @@ $(document).ready(function () {
         success: function(){
           console.log(data);
           loadTweets();
-          $('#area').val('');
+          $('#tweet-text').val('');
         }
       });
 
