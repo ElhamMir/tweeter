@@ -26,6 +26,13 @@ nav {
    padding-left: 10%;
 }
 
+#btn1 {
+   align-items:center; 
+   justify-content:left; 
+   display:flex-end; 
+   float:right; 
+   color:red;
+}
 
 @keyframes slidein {
    0% {
